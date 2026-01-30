@@ -11,17 +11,17 @@ exports.signup = async (req,res) => {
   let existingUser = await User.findOne({ email });
   if (existingUser) {
     return res.status(status.ALREADY_REPORTED).json({
-      message: "Use different Email, The user with this email is already exist",
+      message: "User with this email already exist!, try different Email ",
     });
   }
 
-  if (!name || !email || !password || !role) {
+  if (!name || !email || !password) {
     return res.status(status.BAD_REQUEST).json({
       message: "All fileds are required!",
     });
   }
 
-  let hashedPassword = await bcrypt.hash(password, 10);
+  let hashedPassword = await bcrypt.hash(password, 10); //10 is salt value
 
   let newUser = new User({
     name,

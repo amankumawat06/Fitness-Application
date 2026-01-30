@@ -20,7 +20,6 @@ const dashboardRoute = require("./routes/protectedRoutes")
 const adminDashboard = require("./routes/adminRoute")
 const trainerDashboard = require("./routes/trainerRoute")
 const memberDashboard = require("./routes/memberRoute")
- 
 
 app.use("/", userRouter)
 app.use("/", dashboardRoute)
