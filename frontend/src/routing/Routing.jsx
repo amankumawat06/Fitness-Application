@@ -5,6 +5,11 @@ import Footer from "../landing_Page/common/Footer";
 import ProtactedRoute from "./ProtactedRoute";
 import Login from "../landing_Page/authentication/Login";
 import Signup from "../landing_Page/authentication/Signup";
+import AdminDashboard from "../dashboards/admin/AdminDashboard"
+import Adminlayout from "../dashboards/admin/Adminlayout"
+import CreateTrainer from "../dashboards/admin/CreateTrainer"
+import TrainersList from "../dashboards/admin/TrainersList"
+
 const Routing = () => {
   return (
     <BrowserRouter>
@@ -12,14 +17,14 @@ const Routing = () => {
       <Routes>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        <Route
+        {/* <Route
           path="/admin/dashboard"
           element={
             <ProtactedRoute allowedRoles={["admin"]}>
               <h2>Welcome to Admin Dashboard</h2>
             </ProtactedRoute>
           }
-        ></Route>
+        ></Route> */}
         <Route
           path="/trainer/dashboard"
           element={
@@ -36,6 +41,20 @@ const Routing = () => {
             </ProtactedRoute>
           }
         ></Route>
+        
+        <Route path="/admin" 
+          element={
+          <ProtactedRoute allowedRoles={["admin"]}>
+            <Adminlayout />
+          </ProtactedRoute>
+          }
+        >
+          <Route path="dashboard" element={<AdminDashboard/>} />
+          <Route path="create-trainer" element={<CreateTrainer/>} />
+          <Route path="trainers" element={<TrainersList/>} />
+
+        </Route>
+
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -88,6 +88,13 @@ const Login = () => {
         />
         <br />
         <button type="submit">Login</button>
+
+        <div>
+          <p>
+            Don't have a accoutn
+            <Link to="/signup">Create Account</Link>
+          </p>
+        </div>
       </form>
       <ToastContainer />
     </>
