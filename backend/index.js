@@ -3,6 +3,7 @@ const express = require("express")
 const app = express()
 const { status } = require("http-status")
 const  connectToDB  = require("./config/db")
+const cors = require("cors")
 
 // Access dotenv varibles 
 const port = process.env.PORT
@@ -13,6 +14,7 @@ connectToDB()
 // Middlewares
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
+app.use(cors("http://localhost:8080"))
 
 //Access routes
 const userRouter = require("./routes/userRouter")
