@@ -9,14 +9,25 @@ import AdminDashboard from "../dashboards/admin/AdminDashboard"
 import Adminlayout from "../dashboards/admin/Adminlayout"
 import CreateTrainer from "../dashboards/admin/CreateTrainer"
 import TrainersList from "../dashboards/admin/TrainersList"
+import HomePage from "../landing_Page/components/home/HomePage"
+import AboutHome from "../landing_Page/components/about/AboutHome";
+import FeaturesHome from "../landing_Page/components/features/FeaturesHome";
+import Plans from "../landing_Page/components/plans/PlansHome";
+import Reviews from "../landing_Page/components/reviews/ReviewsHome";
 
 const Routing = () => {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutHome />} />
+        <Route path="/features" element={<FeaturesHome />} />
+        <Route path="/plans" element={<Plans />} />
+        <Route path="/reviews" element={<Reviews />} />
+        
         {/* <Route
           path="/admin/dashboard"
           element={

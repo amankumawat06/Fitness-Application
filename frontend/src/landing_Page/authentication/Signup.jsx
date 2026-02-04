@@ -59,33 +59,38 @@ const Signup = () => {
 
   return (
     <>
-      <h3 className="text-center mt-4">Signup</h3>
+    <div className="auth-page">
+    <div className="auth-card">
+      <h3 className="text-center auth-title">Signup</h3>
       <form
         onSubmit={handleSubmit}
-        className="d-flex flex-column col-lg-6 col-md-8 col-12 offset-0 justify-content-center m-5"
+        className="d-flex flex-column auth-form"
       >
         <input
           type="text"
           name="name"
-          placeholder="enter your name"
+          placeholder="Enter your name"
           value={formData.name}
           onChange={handleInputChanges}
+          required
         />
         <br />
         <input
           type="email"
           name="email"
-          placeholder="enter email"
+          placeholder="Enter email"
           value={formData.email}
           onChange={handleInputChanges}
+          required
         />
         <br />
         <input
           type="password"
           name="password"
-          placeholder="enter password"
+          placeholder="Enter password"
           value={formData.password}
           onChange={handleInputChanges}
+          required
         />
         <br />
         <button type="submit">Signup</button>
@@ -98,7 +103,9 @@ const Signup = () => {
           </p>
         </div>
       </form>
+      </div>  
       <ToastContainer />
+    </div>
     </>
   );
 };

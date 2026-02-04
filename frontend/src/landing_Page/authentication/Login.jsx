@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate,Link } from "react-router-dom";
+import "./style.css"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ const Login = () => {
     } catch (err) {
       toast.error("Something went wrong!");
     }
-
+window.location.reload();
     setFormData({
       email: "",
       password: "",
@@ -66,37 +67,44 @@ const Login = () => {
 
   return (
     <>
-      <h3 className="text-center mt-4">Login</h3>
+    <div className="auth-page">
+      <div className="auth-card">
+      
+      <h3 className="text-center auth-title">Login</h3>
       <form
         onSubmit={handleSubmit}
-        className="d-flex flex-column col-lg-6 col-md-8 col-12 offset-0 justify-content-center m-5"
+        className="d-flex flex-column auth-form"
       >
         <input
           type="email"
           name="email"
-          placeholder="enter email"
+          placeholder="Enter email"
           value={formData.email}
           onChange={handleInputChanges}
+          required
         />
         <br />
         <input
           type="password"
           name="password"
-          placeholder="enter password"
+          placeholder="Enter password"
           value={formData.password}
           onChange={handleInputChanges}
+          required
         />
         <br />
         <button type="submit">Login</button>
 
         <div>
           <p>
-            Don't have a accoutn
+            Don't have a account?
             <Link to="/signup">Create Account</Link>
           </p>
         </div>
       </form>
+      </div>
       <ToastContainer />
+      </div>
     </>
   );
 };

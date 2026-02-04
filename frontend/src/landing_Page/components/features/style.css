@@ -1,0 +1,133 @@
+.services {
+  background: #0b0b0b;
+  padding: 100px 20px;
+  color: #fff;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Heading */
+.services h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.services h2 span {
+  color: #00ff99;
+}
+
+.services-subtitle {
+  color: #aaa;
+  margin-bottom: 60px;
+  font-size: 1.1rem;
+}
+
+/* Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card */
+.service-card {
+  background: #151515;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-bottom: 2px solid #00ff99;
+}
+
+/* Image */
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Dark overlay */
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0)
+  );
+  pointer-events: none;
+}
+
+/* Text */
+.service-card h3 {
+  margin: 18px 18px 6px;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  margin: 0 18px 22px;
+  color: #bbb;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* CTA */
+.card-cta {
+  display: inline-block;
+  margin: 0 18px 22px;
+  color: #00ff99;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effects */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+              0 0 25px rgba(0, 255, 153, 0.12);
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.service-card:hover .card-cta {
+  opacity: 1;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1000px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services h2 {
+    font-size: 2.4rem;
+  }
+
+  .service-card img {
+    height: 200px;
+  }
+}

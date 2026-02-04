@@ -1,0 +1,144 @@
+/* .hero-container{
+    display: flex;
+}
+
+.hero-text{
+    position: absolute;
+}
+
+.hero-image img{
+    width: 100%;
+} */
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/homeImage1.png");
+  background-size: calc(100vw);
+  background-position: right 20% top;
+  background-repeat: no-repeat;
+  position: relative;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.15)
+  );
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  padding-left: 80px;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.hero-content h1 span {
+  color: #00ff99;
+}
+
+.hero-content p {
+  margin: 20px 0;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.hero-buttons button {
+  padding: 10px 25px;
+  border: none;
+  margin: 0 7px;
+  border-radius: 30px;
+  color: #00ff99;
+  border: 1px solid #00ff99;
+  background-color: rgba(0, 0, 0, 0.95);
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #2aac78 !important;
+  color: black !important;
+}
+
+.btn-primary:hover {
+  background-color: transparent !important;
+  color: #00ff99 !important;
+  transition: 0.2s all;
+}
+
+.btn-secondary:hover {
+  background-color: #2aac78 !important;
+  color: black !important;
+  transition: 0.2s all;
+}
+
+@media (max-width: 885px) {
+  .hero-content {
+    padding-left: 15px;
+    max-width: 530px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    max-width: 490px;
+  }
+}
+
+@media (max-width: 815px) {
+  .hero {
+    background-image: url("/assets/homeImage-responsive1.jpg");
+    background-position: top center;
+     /* height: auto;   */
+  }
+
+   .hero-overlay {
+    flex-direction: column; 
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.85); 
+    padding: 25px 20px;
+    margin-top: auto;       
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+  }
+}
+
+@media (min-width:1100px) {
+    .hero-content {
+        max-width: 700px;
+        padding-left: 80px;
+    }
+}
+@media (max-width:500px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
