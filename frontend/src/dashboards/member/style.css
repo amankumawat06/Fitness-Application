@@ -1,0 +1,53 @@
+/* *{
+    padding: 0;
+} */
+
+.auth-title::after{
+    display: none;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.sidebar {
+  width: 240px;
+  background: #111;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar a {
+  color: #aaa;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.sidebar a.active {
+  background: #1fdf64;
+  color: #000 !important;
+}
+
+.main {
+  flex: 1;
+  padding: 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 20px;
+  border-radius: 10px;
+}

@@ -1,0 +1,162 @@
+/* *{
+    padding: 0;
+} */
+
+.auth-title::after{
+    display: none;
+}
+
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.admin-sidebar {
+  width: 240px;
+  background: #111;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-sidebar a {
+  color: #aaa;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.admin-sidebar a.active {
+  background: #1fdf64;
+  color: #000 !important;
+}
+
+.admin-logo{
+  font-size: 24px;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 32px;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.admin-card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 20px;
+  border-radius: 10px;
+}
+/* 
+.data-table {
+  margin-top: 20px;
+}
+
+.table-head,
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 12px;
+}
+
+.table-head {
+  color: #888;
+  border-bottom: 1px solid #222;
+}
+
+.table-row {
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.status.active {
+  color: #1fdf64;
+  border-bottom: none;
+} */
+
+/* .member-table span{
+  margin: 0 20px !important;
+} */
+
+
+.data-section {
+  width: 100%;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.table-card {
+  background: #0b0b0b;
+  border-radius: 12px;
+  padding: 12px 0;
+  border: 1px solid rgba(0, 255, 150, 0.15);
+}
+
+.table-head {
+  display: grid;
+  padding: 14px 24px;
+  font-weight: 600;
+  color: #aaa;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.table-head span{
+  color: #1fdf64;
+}
+
+.table-row {
+  display: grid;
+  padding: 16px 24px;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.table-row:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table-row:hover {
+  background: rgba(0, 255, 150, 0.05);
+}
+
+.table-cols-3 {
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.table-cols-4 {
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.email {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+.status-badge {
+  width: fit-content;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-badge.active {
+  background: rgba(0, 255, 150, 0.15);
+  color: #00ff96;
+}
+

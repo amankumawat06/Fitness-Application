@@ -1,0 +1,62 @@
+import axios from "axios";
+import { useState,useEffect } from "react";
+
+const DashboardHome = () => {
+
+  let [totalTrainers,setTotalTrainers] = useState([])
+  let [totalMembers,setTotalMembers] = useState([])
+  let [totalPlans,setTotalPlans] = useState([])
+
+  const token = localStorage.getItem("token") 
+  useEffect(() => {
+    axios.get("http://localhost:8080/admin/allTrainers",{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    }).then((res) => {
+      setTotalTrainers(res.data.allTrainers)
+    })
+  },[])
+
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/admin/allMembers",{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    }).then((res) => {
+      setTotalMembers(res.data.allMembers)
+    })
+  },[])
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/admin/allPlans",{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    }).then((res) => {
+      setTotalPlans(res.data.allPlans)
+    })
+  },[])
+
+  return (
+    <div className="admin-grid p-3">
+      <div className="admin-card">
+        <h4>Total Trainers</h4>
+        <p>{totalTrainers.length}</p>
+      </div>
+
+      <div className="admin-card">
+        <h4>Total Members</h4>
+        <p>{totalMembers.length}</p>
+      </div>
+
+      <div className="admin-card">
+        <h4>Active Plans</h4>
+        <p>{totalPlans.length}</p>
+      </div>
+    </div>
+  );
+};
+
+export default DashboardHome;

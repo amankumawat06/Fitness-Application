@@ -47,18 +47,21 @@ const Login = () => {
         if (role === "admin") {
           navigate("/admin/dashboard");
         } else if (role === "trainer") {
-          navigate("/trainer/dashboard");
+          navigate("/trainer/members");
         } else {
           navigate("/member/dashboard");
         }
         handleSuccess(res.data.message);
+        setTimeout(() => {  
+          window.location.reload();      // referesh the window automatically while user login
+          }, 300);
       }else{
         handleError(res.data.message);
       }
     } catch (err) {
       toast.error("Something went wrong!");
     }
-window.location.reload();
+    
     setFormData({
       email: "",
       password: "",

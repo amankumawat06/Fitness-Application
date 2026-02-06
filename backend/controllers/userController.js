@@ -22,9 +22,10 @@ exports.signup = async (req,res) => {
   }
 
   let hashedPassword = await bcrypt.hash(password, 10); //10 is salt value
+  let fullName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
 
   let newUser = new User({
-    name,
+    name: fullName,
     email,
     password: hashedPassword,
     role,
@@ -74,11 +75,14 @@ exports.login = async (req,res) => {
        }
     )
 
+    //Hide password in API testing 
+    const {password:_, ...safeUser} = user._doc;
+
       return res.status(status.OK).json({
         success: true,
         message: "User logged In successfully!",
-        token
-        // user
+        token,
+        user: safeUser
       })
 
   }catch(err){

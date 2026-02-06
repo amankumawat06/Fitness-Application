@@ -3,7 +3,7 @@ let router = express.Router()
 
 const verifyToken = require("../middlewares/authMiddleware")
 const { isAdmin } = require("../middlewares/roleMiddleware")
-const {createTrainer}  = require("../controllers/adminController")
+const {createTrainer, allTrainers, allMembers, allPlans}  = require("../controllers/adminController")
 
 // Admin Dashboard
 router.get("/admin/dashboard", verifyToken, isAdmin, (req,res) => {
@@ -16,5 +16,10 @@ router.get("/admin/dashboard", verifyToken, isAdmin, (req,res) => {
 // Admin creates trainner dashboard
 router.post("/admin/create-trainer", verifyToken, isAdmin, createTrainer)
 
+router.get("/admin/allTrainers", verifyToken, isAdmin, allTrainers)
+// router.post("/admin/removeAllTrainers", verifyToken, isAdmin, removeAllTrainers)
+
+router.get("/admin/allMembers", verifyToken, isAdmin, allMembers)
+router.get("/admin/allPlans", verifyToken, isAdmin, allPlans)
 
 module.exports = router

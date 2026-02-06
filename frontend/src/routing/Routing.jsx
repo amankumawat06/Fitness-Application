@@ -2,32 +2,39 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "../landing_Page/common/Navbar";
 import Footer from "../landing_Page/common/Footer";
-import ProtactedRoute from "./ProtactedRoute";
 import Login from "../landing_Page/authentication/Login";
 import Signup from "../landing_Page/authentication/Signup";
-import AdminDashboard from "../dashboards/admin/AdminDashboard"
-import Adminlayout from "../dashboards/admin/Adminlayout"
-import CreateTrainer from "../dashboards/admin/CreateTrainer"
-import TrainersList from "../dashboards/admin/TrainersList"
-import HomePage from "../landing_Page/components/home/HomePage"
-import AboutHome from "../landing_Page/components/about/AboutHome";
-import FeaturesHome from "../landing_Page/components/features/FeaturesHome";
+import Home from "../landing_Page/components/home/HomePage";
+import About from "../landing_Page/components/about/AboutHome";
+import Features from "../landing_Page/components/features/FeaturesHome";
 import Plans from "../landing_Page/components/plans/PlansHome";
 import Reviews from "../landing_Page/components/reviews/ReviewsHome";
+//Protacted Routes
+import ProtactedRoute from "./ProtactedRoute";
+import AdminDashboard from "../dashboards/admin/AdminDashboard";
+import DashboardHome from "../dashboards/admin/DashboardHome";
+import CreateTrainer from "../dashboards/admin/CreateTrainer";
+import TrainersList from "../dashboards/admin/TrainersList";
+import MembersList from "../dashboards/admin/MembersList";
+import TrainerDashboard from "../dashboards/trainer/TrainerDashboard";
+import TrainerDashboardMembers from "../dashboards/trainer/MemberList"
+
+import MemberDashboard from "../dashboards/member/MemberDashboard"
+import MemberProfile from "../dashboards/member/MemberProfile";
 
 const Routing = () => {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutHome />} />
-        <Route path="/features" element={<FeaturesHome />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/features" element={<Features />} />
         <Route path="/plans" element={<Plans />} />
         <Route path="/reviews" element={<Reviews />} />
-        
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
         {/* <Route
           path="/admin/dashboard"
           element={
@@ -36,36 +43,42 @@ const Routing = () => {
             </ProtactedRoute>
           }
         ></Route> */}
+
         <Route
-          path="/trainer/dashboard"
-          element={
-            <ProtactedRoute allowedRoles={["trainer"]}>
-              <h2>Welcome to Trainer Dashboard</h2>
-            </ProtactedRoute>
-          }
-        ></Route>
-        <Route
-          path="/member/dashboard"
+          path="/member"
           element={
             <ProtactedRoute allowedRoles={["member"]}>
-              <h2>Welcome to Member Dashboard</h2>
+              <MemberDashboard />
             </ProtactedRoute>
           }
-        ></Route>
-        
-        <Route path="/admin" 
-          element={
-          <ProtactedRoute allowedRoles={["admin"]}>
-            <Adminlayout />
-          </ProtactedRoute>
-          }
         >
-          <Route path="dashboard" element={<AdminDashboard/>} />
-          <Route path="create-trainer" element={<CreateTrainer/>} />
-          <Route path="trainers" element={<TrainersList/>} />
-
+          <Route path="profile" element={<MemberProfile />} />
         </Route>
 
+        <Route
+          path="/trainer"
+          element={
+            <ProtactedRoute allowedRoles={["trainer"]}>
+              <TrainerDashboard />
+            </ProtactedRoute>
+          }
+        >
+          <Route path="members" element={<TrainerDashboardMembers />} />
+        </Route>
+
+        <Route
+          path="/admin"
+          element={
+            <ProtactedRoute allowedRoles={["admin"]}>
+              <AdminDashboard />
+            </ProtactedRoute>
+          }
+        >
+          <Route path="dashboard" element={<DashboardHome />} />
+          <Route path="create-trainer" element={<CreateTrainer />} />
+          <Route path="trainers" element={<TrainersList />} />
+          <Route path="members" element={<MembersList />} />
+        </Route>
       </Routes>
       <Footer />
     </BrowserRouter>

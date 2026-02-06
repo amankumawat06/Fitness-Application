@@ -1,9 +1,23 @@
+import { NavLink, Outlet } from "react-router-dom";
+
 const AdminDashboard = () => {
   return (
-    <div>
-      <h1>Welcome to Admin😎 Dashboard</h1>
-    </div>
-  )
-}
+    <div className="admin-wrapper">
+      <aside className="admin-sidebar">
+        <h2 className="admin-logo">Admin Panel</h2>
+          <NavLink to="/admin/dashboard">Dashboard</NavLink>
+          <NavLink to="/admin/create-trainer">Create Trainer</NavLink>
+          <NavLink to="/admin/trainers">Trainers List</NavLink>
+          <NavLink to="/admin/members">Members List</NavLink>
+      </aside>
 
-export default AdminDashboard
+      <main style={{ flex: 1, borderLeft:"2px solid #00ff99"}}>
+        <Outlet />
+      </main>
+
+    </div>
+  );
+};
+
+export default AdminDashboard;
+
