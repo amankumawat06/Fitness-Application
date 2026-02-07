@@ -21,6 +21,8 @@ import TrainerDashboardMembers from "../dashboards/trainer/MemberList"
 
 import MemberDashboard from "../dashboards/member/MemberDashboard"
 import MemberProfile from "../dashboards/member/MemberProfile";
+import MemberGoal from "../dashboards/member/MemberGoal";
+import MemberPlans from "../dashboards/member/MemberPlans";
 
 const Routing = () => {
   return (
@@ -35,15 +37,6 @@ const Routing = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        {/* <Route
-          path="/admin/dashboard"
-          element={
-            <ProtactedRoute allowedRoles={["admin"]}>
-              <h2>Welcome to Admin Dashboard</h2>
-            </ProtactedRoute>
-          }
-        ></Route> */}
-
         <Route
           path="/member"
           element={
@@ -53,6 +46,8 @@ const Routing = () => {
           }
         >
           <Route path="profile" element={<MemberProfile />} />
+          <Route path="goal" element={<MemberGoal />} />
+          <Route path="plans" element={<MemberPlans />} />
         </Route>
 
         <Route

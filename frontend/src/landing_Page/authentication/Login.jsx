@@ -49,7 +49,7 @@ const Login = () => {
         } else if (role === "trainer") {
           navigate("/trainer/members");
         } else {
-          navigate("/member/dashboard");
+          navigate("/member/profile");
         }
         handleSuccess(res.data.message);
         setTimeout(() => {  
