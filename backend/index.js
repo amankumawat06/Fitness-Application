@@ -14,7 +14,14 @@ connectToDB()
 // Middlewares
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
-app.use(cors("https://fitness-application-rho.vercel.app", "https://fit-track-fitness-application.vercel.app"))
+// app.use(cors("https://fitness-application-rho.vercel.app", "https://fit-track-fitness-application.vercel.app"))
+app.use(cors({
+    origin: [
+        "https://fitness-application-rho.vercel.app",
+        "https://fit-track-fitness-application.vercel.app"
+    ],
+    credentials:true,
+}))
 
 //Access routes
 const userRouter = require("./routes/userRouter")
