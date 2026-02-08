@@ -21,6 +21,10 @@
   image-rendering: -webkit-optimize-contrast;
 }
 
+.hero{
+  background-color: #000;
+}
+
 .hero-overlay {
   width: 100%;
   height: 100%;
@@ -96,7 +100,7 @@
   }
 }
 
-@media (max-width: 815px) {
+@media (max-width: 893px) {
   .hero {
     background-image: url("/assets/homeImage-responsive1.jpg");
     background-position: top center;
@@ -107,6 +111,11 @@
     flex-direction: column; 
     justify-content: flex-end;
     align-items: stretch;
+    background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.15)
+  );
   }
 
   .hero-content {

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import "./member.css"
 
 const MemberGoal = () => {
   const navigate = useNavigate();
@@ -31,16 +32,26 @@ const MemberGoal = () => {
   };
 
   return (
-    <div className="p-5">
-      <h2>Set your Goal</h2>
+    <div className="set-goal-wrapper">
+  <h2 className="set-goal-title">Set Your Goal</h2>
 
-      <button onClick={() => setGoal("weight_loss")}>Weight Loss</button>
+  <div className="goal-options">
+    <button onClick={() => setGoal("weight_loss")}>
+      Weight Loss
+    </button>
 
-      <button onClick={() => setGoal("weight_gain")}>Weight Gain</button>
+    <button onClick={() => setGoal("weight_gain")}>
+      Weight Gain
+    </button>
 
-      <button onClick={() => setGoal("fitness")}>Fitness</button>
-      <ToastContainer />
-    </div>
+    <button onClick={() => setGoal("fitness")}>
+      Fitness
+    </button>
+  </div>
+
+  <ToastContainer />
+</div>
+
   );
 };
 

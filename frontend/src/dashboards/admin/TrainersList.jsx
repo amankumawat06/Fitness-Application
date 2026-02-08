@@ -21,7 +21,7 @@ const TrainerList = () => {
   return (
     <div className="p-4 data-section">
       <h3 className="section-title">Trainers</h3>
-
+     <div className="table-scroll">
       <div className="table-card">
         <div className="table-head table-cols-4">
           <span>Name</span>
@@ -38,6 +38,7 @@ const TrainerList = () => {
             <span className="status-badge active">Active</span>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

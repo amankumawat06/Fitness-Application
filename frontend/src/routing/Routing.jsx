@@ -23,6 +23,7 @@ import MemberDashboard from "../dashboards/member/MemberDashboard"
 import MemberProfile from "../dashboards/member/MemberProfile";
 import MemberGoal from "../dashboards/member/MemberGoal";
 import MemberPlans from "../dashboards/member/MemberPlans";
+import Dashboard from "../dashboards/member/Dashboard";
 
 const Routing = () => {
   return (
@@ -48,6 +49,7 @@ const Routing = () => {
           <Route path="profile" element={<MemberProfile />} />
           <Route path="goal" element={<MemberGoal />} />
           <Route path="plans" element={<MemberPlans />} />
+          <Route path="selected-goal" element={<Dashboard />} />
         </Route>
 
         <Route

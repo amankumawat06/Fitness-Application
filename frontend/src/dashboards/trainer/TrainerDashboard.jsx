@@ -1,15 +1,19 @@
 import { NavLink, Outlet } from "react-router-dom";
-import "./style.css"
+import "./trainer.css"
+import { FaUsers} from "react-icons/fa";
 
 const TrainerDashboard = () => {
   return (
     <div className="wrapper">
-      <aside className="sidebar">
-        <h2 className="logo">Trainer Panel</h2>
-          <NavLink to="/trainer/members">Members List</NavLink>
+      <aside className="sidebar icon-sidebar">
+        {/* <h2 className="logo">Trainer Panel</h2> */}
+          <NavLink to="/trainer/members" className="side-item">
+            <span className="icon"><FaUsers className="icon" /></span>
+            <span className="label">Members List</span>
+          </NavLink>
       </aside>
 
-      <main style={{ flex: 1, borderLeft:"2px solid #00ff99"}}>
+      <main className="main-content">
         <Outlet />
       </main>
 

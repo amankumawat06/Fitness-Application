@@ -8,9 +8,10 @@
 
 .wrapper {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;          
   background: #0b0b0b;
   color: #fff;
+  overflow: hidden;    
 }
 
 .sidebar {
@@ -20,6 +21,24 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  height: 100vh;        
+  position: sticky;
+  top: 0;
+}
+
+.main-content {
+  flex: 1;
+  height: 100vh;    
+  overflow-y: auto;   
+  border-left: 2px solid #00ff99;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: #0b0b0b; 
 }
 
 .sidebar a {

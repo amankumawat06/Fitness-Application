@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState,useEffect } from "react";
+import "./admin.css"
 
 const DashboardHome = () => {
 

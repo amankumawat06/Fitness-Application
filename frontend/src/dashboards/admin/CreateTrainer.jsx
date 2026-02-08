@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./style.css"
+import "./admin.css"
 import { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";

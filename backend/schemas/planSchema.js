@@ -4,7 +4,7 @@ const workoutPlanSchema = new Schema({
     planName: {
         type: String,
         required: true,
-        enum: ["beginner","Intermidate","expert"]
+        enum: ["beginner","Intermediate","expert"]
     },
     goal:{
         type: String,

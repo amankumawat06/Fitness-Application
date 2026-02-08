@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
+import "./trainer.css"
 
 const MembersList = () => {
   const [allMembers, setAllMembers] = useState([]);
@@ -21,7 +22,7 @@ const MembersList = () => {
   return (
     <div className="p-4 data-section">
       <h3 className="section-title">Members</h3>
-
+    <div className="table-scroll">
       <div className="table-card">
         <div className="table-head table-cols-3">
           <span>Name</span>
@@ -36,6 +37,7 @@ const MembersList = () => {
             <span className="status-badge active">Active</span>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

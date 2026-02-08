@@ -1,15 +1,28 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import "./style.css";
+import { jwtDecode } from "jwt-decode";
 
 const Navbar = () => {
   const navigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [role,setRole] = useState(null)
 
-   useEffect(() => {
-    const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token);
+  useEffect(() => {
+     const token = localStorage.getItem("token");
+     
+     if(token){
+       setIsLoggedIn(!!token);
+
+       try {
+        const decoded = jwtDecode(token);
+        setRole(decoded.role);
+      } catch (err) {
+        console.error("Invalid token");
+      }
+     }
+
   }, []);
 
   const handleLogout = () => {
@@ -17,6 +30,7 @@ const Navbar = () => {
     localStorage.removeItem("role")
 
     setIsLoggedIn(false)
+    setRole(null)
     navigate("/login")
   }
 
@@ -83,6 +97,39 @@ const Navbar = () => {
                   Reviews
                 </NavLink>
               </li>
+              {isLoggedIn &&  role === "member" &&(
+                <li>
+                <NavLink
+                  to="/member/profile"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+              )}
+              {isLoggedIn &&  role === "trainer" &&(
+                <li>
+                <NavLink
+                  to="/trainer/members"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+              )}
+              {isLoggedIn &&  role === "admin" &&(
+                <li>
+                <NavLink
+                  to="/admin/dashboard"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+              )}
             </ul>
           </div>
           <div className="navbuttons">

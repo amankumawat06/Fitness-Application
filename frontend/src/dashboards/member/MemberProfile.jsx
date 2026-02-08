@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import "./member.css"
 
 const MemberProfile = () => {
   const [user, setUser] = useState("");
@@ -28,7 +29,7 @@ const MemberProfile = () => {
   return (
     <div className="member-profile">
       <h2 className="profile-greeting mb-4">
-        Welcome to your profile, <span>{user.name}</span> 👋
+        Welcome, <span>{user.name}</span> 👋
       </h2>
 
       <p className="user-id">User ID: {user._id}</p>
@@ -42,7 +43,7 @@ const MemberProfile = () => {
         </div>
       </div>
 
-      <button className="edit-btn">Edit Profile</button>
+      <button className="edit-btn" disabled>Edit Profile</button>
     </div>
   );
 };

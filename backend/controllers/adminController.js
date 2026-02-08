@@ -67,27 +67,35 @@ exports.allTrainers = async (req,res) => {
   }
 }
 
+exports.removeTrainer = async (req, res) => {
+  try {
+    const { id } = req.params; // /admin/remove-trainer/:id
 
-// exports.removeAllTrainers = async (req,res) => {
-//   try{
-//     let allTrainers = await User.deleteMany({role:"trainer"})
-    
-//     if(!allTrainers){
-//       return res.status(status.NOT_FOUND).json({
-//         message:"No trainers found!"
-//       })
-//     }
-//     return res.status(status.OK).json({
-//       success: true,
-//       message:"All Trainers Deleted",
-//       allTrainers
-//     })
-//   }catch(err){
-//     return res.status(status.INTERNAL_SERVER_ERROR).json({
-//       message:"Internal server error!!"
-//     })
-//   }
-// }
+    const deletedTrainer = await User.findOneAndDelete({
+      _id: id,
+      role: "trainer",
+    }).select("-password");
+
+    if (!deletedTrainer) {
+      return res.status(status.NOT_FOUND).json({
+        success: false,
+        message: "Trainer not found!",
+      });
+    }
+
+    return res.status(status.OK).json({
+      success: true,
+      message: "Trainer deleted successfully",
+      deletedTrainer,
+    });
+  } catch (err) {
+    return res.status(status.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: "Internal server error!!",
+    });
+  }
+};
+
 
 exports.allMembers = async (req,res) => {
   try{

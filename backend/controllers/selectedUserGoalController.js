@@ -148,8 +148,8 @@ const getSelectedPlan = async(req,res) => {
 
   return res.status(status.OK).json({
     success: true,
-    goal: userGoal,
-    plan: userGoal.selectedPlan
+    goal: userGoal
+    // plan
   })
   }catch(err){
     return res.status(status.INTERNAL_SERVER_ERROR).json({

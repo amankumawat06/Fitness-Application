@@ -1,9 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import "./member.css"
 
 const MemberPlans = () => {
   const [plans, setPlans] = useState([]);
+  const navigate = useNavigate()
   let token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -15,42 +18,59 @@ const MemberPlans = () => {
       })
       .then((res) => {
         setPlans(res.data.plans);
-        console.log(res.data)
+        console.log(res.data);
       });
   }, []);
 
-
-  const selectPlan  = async (planId) => {
-    try{
-      let res = await axios.post("http://localhost:8080/member/select-plan",
-      {planId},
-      {
-        headers:{
-          Authorization:`Bearer ${token}`
-        }
-      }
-    ).then((res) =>{
-      console.log(res)
-      toast.success(res.data.message)
-    })
-    }catch(err){
-      toast.error(err)
+  const selectPlan = async (planId) => {
+    try {
+      let res = await axios
+        .post(
+          "http://localhost:8080/member/select-plan",
+          { planId },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        )
+        .then((res) => {
+          toast.success(res.data.message);
+          setTimeout(() => navigate("/member/selected-goal"), 1300);
+        });
+    } catch (err) {
+      toast.error(err);
     }
+  };
+
+  if (!plans) {
+    return <div className="profile-loading">Loading...</div>;
   }
 
   return (
-    <div className="p-5">
-      <h2>Choose Your Plan</h2>
+    <div className="Mchoose-plan-wrapper">
+  <h2 className="Mchoose-plan-title">Choose Your Plan</h2>
 
+  {plans.length > 0 ? (
+    <div className="Mplans-grid">
       {plans.map((plan) => (
-        <div className="plan-card" key={plan._id}>
+        <div className="Mplan-box" key={plan._id}>
           <h4>{plan.planName}</h4>
-          <p>Duration:{plan.duration}</p>
-          <button onClick={() => selectPlan(plan._id)}>Select Plan</button>
+          <p>Duration: {plan.duration} months</p>
+
+          <button onClick={() => selectPlan(plan._id)}>
+            Select Plan
+          </button>
         </div>
       ))}
-      <ToastContainer />
     </div>
+  ) : (
+    <p className="Mno-plan-text">No plans available yet.</p>
+  )}
+
+  <ToastContainer />
+</div>
+
   );
 };
 

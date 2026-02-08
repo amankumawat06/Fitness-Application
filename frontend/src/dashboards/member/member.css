@@ -1,0 +1,560 @@
+.auth-title::after {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  background: #0b0b0b;
+  color: #fff;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 240px;
+  background: #111;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.main-content {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  border-left: 2px solid #00ff99;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: #0b0b0b;
+}
+
+.sidebar a {
+  color: #aaa;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.sidebar a.active {
+  background: #1fdf64;
+  color: #000 !important;
+}
+
+.main {
+  flex: 1;
+  padding: 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.member-profile {
+  padding: 40px;
+  color: #fff;
+  max-width: 800px;
+}
+
+.user-id {
+  color: #777;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.profile-row {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border: 1px dashed #1fdf64;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1fdf64;
+  font-size: 14px;
+  cursor: not-allowed;
+}
+
+.profile-fields {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.profile-fields input {
+  flex: 1;
+  background: #0b0b0b;
+  border: 1px solid #222;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #fff;
+  outline: none;
+}
+
+.profile-fields input:read-only {
+  cursor: not-allowed;
+}
+
+.edit-btn {
+  margin-top: 30px;
+  background: #08461f;
+  color: #0c0b0b;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+.profile-greeting {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.profile-greeting span {
+  color: #1fdf64;
+}
+
+/* dashboard  */
+
+.member-plan-page {
+  padding: 40px;
+  color: #fff;
+}
+
+.plan-inset-box {
+  background: #0e0e0e;
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 720px;
+}
+
+.plan-title {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.plan-title span {
+  color: #1fdf64;
+}
+
+.plan-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 5px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.plan-row span:first-child {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.plan-row span:last-child {
+  color: #fff;
+  font-size: 15px;
+}
+
+.plan-inset-box.empty {
+  text-align: center;
+  color: #888;
+}
+
+/* member-plan */
+
+.Mchoose-plan-wrapper {
+  padding: 32px;
+}
+
+.Mchoose-plan-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.Mplans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+}
+
+.Mplan-box {
+  background: #101010;
+  border: 1px solid #1e1e1e;
+  padding: 18px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.Mplan-box h4 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.Mplan-box p {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.Mplan-box button {
+  background: #1fdf64;
+  color: #000;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.Mno-plan-text {
+  color: #777;
+  margin-top: 20px;
+}
+
+/* member-goal */
+
+.set-goal-wrapper {
+  padding: 32px;
+}
+
+.set-goal-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.goal-options {
+  display: flex;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.goal-options button {
+  flex: 1;
+  background: #101010;
+  border: 1px solid #1e1e1e;
+  color: #fff;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.goal-options button:hover {
+  border-color: #1fdf64;
+  color: #1fdf64;
+}
+
+/*  */
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 40px;
+}
+
+/* Card */
+.exercise-card {
+  background: linear-gradient(180deg, #0f0f0f, #090909);
+  border-bottom: 2px solid #1fdf64;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.exercise-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 255, 150, 0.08);
+}
+
+/* Image */
+.exercise-img img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content */
+.exercise-content {
+  padding: 16px;
+  flex: 1;
+}
+
+.exercise-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.exercise-card p {
+  font-size: 13px;
+  color: #9a9a9a;
+  line-height: 1.5;
+}
+
+.icon {
+  display: none;
+}
+
+/* responsive */
+
+@media (max-width: 1050px) {
+  .icon {
+    display: block;
+  }
+  .icon-sidebar {
+    width: 72px;
+    padding: 16px 10px;
+    align-items: center;
+  }
+
+  .side-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    color: #aaa;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .side-item:hover {
+    background: #1a1a1a;
+    color: #1fdf64;
+  }
+
+  /* Icon */
+  .side-item .icon {
+    font-size: 20px;
+  }
+
+  /* Hidden label */
+  .side-item .label {
+    position: absolute;
+    left: 70px;
+    background: #111;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-6px);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Show label on hover */
+  .side-item:hover .label {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .side-item.active {
+    background: #1fdf64;
+    color: #000;
+  }
+  .side-item.active .icon {
+    color: #000;
+  }
+}
+
+@media (max-width:750px) {
+  .icon-sidebar {
+    width: 52px;
+    padding: 16px 10px;
+  }
+  .icon{
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .member-profile {
+    padding: 30px;
+  }
+
+  .profile-fields {
+    flex-direction: column;
+  }
+  .goal-options {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .member-profile {
+    padding: 20px;
+  }
+
+  .profile-greeting {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .user-id {
+    text-align: center;
+  }
+
+  .profile-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-fields {
+    width: 100%;
+  }
+
+  .profile-fields input {
+    width: 100%;
+  }
+
+  .edit-btn {
+    width: 100%;
+    margin-top: 24px;
+  }
+  .set-goal-wrapper {
+    padding: 20px;
+  }
+
+  .set-goal-title {
+    text-align: center;
+  }
+
+  .goal-options {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .goal-options button {
+    width: 100%;
+    font-size: 16px;
+    padding: 16px;
+  }
+}
+
+
+
+/* Card */
+.exercise-card {
+  background: linear-gradient(180deg, #0f0f0f, #090909);
+  border-bottom: 2px solid #1fdf64;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.exercise-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 255, 150, 0.08);
+}
+
+
+.rec-exercises-title{
+  padding: 44px;
+}
+
+@media (max-width:435px) {
+.exercise-img img {
+  width: 100%;
+  height: 170px;
+}
+.exercise-grid {
+  gap: 24px;
+  padding: 20px;
+}
+.member-plan-page {
+  padding: 20px;
+}
+.rec-exercises-title{
+  padding: 24px;
+}
+}
+
+@media (max-width:390px) {
+  .exercise-img img {
+  height: 170px;
+}
+.exercise-card{
+  width: 90%;
+}
+.plan-inset-box{
+  padding: 20px 15px;
+}
+.rec-exercises-title{
+  font-size: 18px;
+}
+}
+
+@media (max-width:360px) {
+  .exercise-img img {
+  height: 140px;
+}
+.exercise-card{
+  width: 80%;
+  /* height: 280px; */
+}
+}
+
+@media (max-width:325px) {
+  .exercise-img img {
+  height: 130px;
+}
+.exercise-card{
+  width: 70%;
+}
+}
+
+@media (max-width:300px) {
+  .exercise-img img {
+  height: 100px;
+}
+.exercise-card{
+  width: 60%;
+}
+}

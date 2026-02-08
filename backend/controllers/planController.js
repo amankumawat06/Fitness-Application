@@ -12,7 +12,7 @@ const createPlan = async (req, res) => {
       });
     }
 
-    let existingPlan = await Plan.findOne({ goal });
+    let existingPlan = await Plan.findOne({ goal, planName });
     if (existingPlan) {
       return res.status(status.ALREADY_REPORTED).json({
         success: false,
