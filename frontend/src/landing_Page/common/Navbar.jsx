@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import { jwtDecode } from "jwt-decode";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const navigate = useNavigate()
@@ -148,7 +149,7 @@ const Navbar = () => {
               className="hamburger"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              ☰
+              {isMenuOpen ? <FaTimes /> : <FaBars /> }
             </div>
           </div>
         </div>

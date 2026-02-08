@@ -18,7 +18,6 @@ const MemberPlans = () => {
       })
       .then((res) => {
         setPlans(res.data.plans);
-        console.log(res.data);
       });
   }, []);
 

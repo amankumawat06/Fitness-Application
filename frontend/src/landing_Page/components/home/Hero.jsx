@@ -1,7 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
+import { toast, ToastContainer } from "react-toastify";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+      return;
+    }
+    try {
+      const decoded = jwtDecode(token);
+      const role = decoded.role;
+      if (token && role === "member") navigate("/member/profile");
+      else if (token && role === "admin") navigate("/admin/dashboard");
+      else if (token && role === "trainer") navigate("/trainer/members");
+      else navigate("/plans");
+    } catch (err) {
+      console.error("Invalid token", err);
+      toast.error("Session expired. Please login again.");
+      navigate("/login");
+    }
+  };
+
   return (
     <div>
       <section className="hero">
@@ -17,9 +41,11 @@ const Hero = () => {
             </p>
 
             <div className="hero-buttons">
-              <Link to="/login">
-                <button className="btn-primary">Get Started</button>
-              </Link>
+              {/* <Link to={handleGetStarted}> */}
+              <button className="btn-primary" onClick={handleGetStarted}>
+                Get Started
+              </button>
+              {/* </Link> */}
               <Link to="/plans">
                 <button className="btn-secondary">View Plans</button>
               </Link>
@@ -27,6 +53,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
+      <ToastContainer />
     </div>
   );
 };

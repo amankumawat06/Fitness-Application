@@ -1,5 +1,7 @@
 import "./style.css";
 import { Link } from "react-router-dom";
+import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+
 
 const Footer = () => {
   return (
@@ -28,22 +30,22 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Support</h4>
           <ul>
-            <li>FAQs</li>
-            <li>Privacy Policy</li>
-            <li>Terms & Conditions</li>
-            <li>Help Center</li>
+            <li><Link to="/faqs">FAQs</Link></li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link to="/terms-conditions">Terms & Conditions</Link></li>
+            <li><Link to="/help-center">Help Center</Link></li>
           </ul>
         </div>
 
         <div className="footer-col">
           <h4>Contact</h4>
-          <p>Email: support@fittrack.com</p>
-          <p>Phone: +91 98765 43210</p>
+          <p>Email: amankumawat4507@gmail.com</p>
+          <p>Phone: +91 9079720440</p>
 
           <div className="socials">
-            <span>🌐</span>
-            <span>📘</span>
-            <span>📸</span>
+            <a href="https://www.instagram.com/amankmwt_06/?next=%2F&hl=en"><span><FaInstagram /></span></a>
+            <a href="https://x.com/amankumawatt67"><span><FaTwitter /></span></a>
+            <a href="https://youtube.com"><span><FaYoutube /></span></a>
           </div>
         </div>
 

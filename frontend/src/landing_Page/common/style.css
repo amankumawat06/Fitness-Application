@@ -228,6 +228,10 @@
   cursor: pointer;
 }
 
+.socials a{
+  color: #ccc;
+}
+
 .socials span:hover {
   color: #00ff99;
 }

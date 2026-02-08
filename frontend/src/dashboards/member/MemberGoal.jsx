@@ -24,10 +24,8 @@ const MemberGoal = () => {
         toast.success(res.data.message)
         setTimeout(() =>  navigate("/member/plans") , 1500);
       }
-      console.log(res);
     } catch (err) {
     toast.error(res.data.message)
-      console.log(err);
     }
   };
 
