@@ -8,7 +8,7 @@ const MembersList = () => {
   let token = localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get("http://localhost:8080/tariner/members", {
+      .get("https://fitness-application-rho.vercel.app/tariner/members", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

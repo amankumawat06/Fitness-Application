@@ -8,7 +8,7 @@ const TrainerList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/admin/allTrainers", {
+      .get("https://fitness-application-rho.vercel.app/admin/allTrainers", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

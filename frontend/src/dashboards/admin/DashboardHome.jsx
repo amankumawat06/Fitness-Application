@@ -10,7 +10,7 @@ const DashboardHome = () => {
 
   const token = localStorage.getItem("token") 
   useEffect(() => {
-    axios.get("http://localhost:8080/admin/allTrainers",{
+    axios.get("https://fitness-application-rho.vercel.app/admin/allTrainers",{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -21,7 +21,7 @@ const DashboardHome = () => {
 
 
   useEffect(() => {
-    axios.get("http://localhost:8080/admin/allMembers",{
+    axios.get("https://fitness-application-rho.vercel.app/admin/allMembers",{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -31,7 +31,7 @@ const DashboardHome = () => {
   },[])
 
   useEffect(() => {
-    axios.get("http://localhost:8080/admin/allPlans",{
+    axios.get("https://fitness-application-rho.vercel.app/admin/allPlans",{
       headers:{
         Authorization:`Bearer ${token}`
       }

@@ -43,9 +43,9 @@ const Footer = () => {
           <p>Phone: +91 9079720440</p>
 
           <div className="socials">
-            <a href="https://www.instagram.com/amankmwt_06/?next=%2F&hl=en"><span><FaInstagram /></span></a>
-            <a href="https://x.com/amankumawatt67"><span><FaTwitter /></span></a>
-            <a href="https://youtube.com"><span><FaYoutube /></span></a>
+            <a href="https://www.instagram.com/amankmwt_06/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer"><span><FaInstagram /></span></a>
+            <a href="https://x.com/amankumawatt67" target="_blank" rel="noopener noreferrer"><span><FaTwitter /></span></a>
+            <a href="https://youtube.com"target="_blank" rel="noopener noreferrer"><span><FaYoutube /></span></a>
           </div>
         </div>
 

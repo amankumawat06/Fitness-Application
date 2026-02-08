@@ -37,7 +37,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      let res = await axios.post("http://localhost:8080/login", formData);
+      let res = await axios.post("https://fitness-application-rho.vercel.app/login", formData);
 
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);

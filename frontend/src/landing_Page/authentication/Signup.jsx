@@ -37,7 +37,7 @@ const Signup = () => {
 
     try {
       
-      let res = await axios.post("http://localhost:8080/signup",formData)
+      let res = await axios.post("https://fitness-application-rho.vercel.app/signup",formData)
       console.log(`User created successfully!`)
 
       if(res.data.success){
