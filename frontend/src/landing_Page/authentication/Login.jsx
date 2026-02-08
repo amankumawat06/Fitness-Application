@@ -7,6 +7,7 @@ import "./style.css"
 
 const Login = () => {
   const navigate = useNavigate();
+  const [loading,setLoading] = useState(false)
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -35,6 +36,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
 
     try {
       let res = await axios.post("https://fitness-application-rho.vercel.app/login", formData);
@@ -60,6 +62,8 @@ const Login = () => {
       }
     } catch (err) {
       toast.error("Something went wrong!");
+    }finally{
+      setLoading(false)
     }
     
     setFormData({
@@ -96,7 +100,9 @@ const Login = () => {
           required
         />
         <br />
-        <button type="submit">Login</button>
+        <button type="submit" className={loading ? "disableBtn" : ""}>
+          {loading ? "Logging in..." : "Login"}
+        </button>
 
         <div>
           <p>

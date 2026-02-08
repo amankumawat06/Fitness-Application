@@ -5,6 +5,7 @@ import { useNavigate,Link } from "react-router-dom"
 
 const Signup = () => {
   const navigate = useNavigate()
+  const [loading,setLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,6 +35,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
 
     try {
       
@@ -48,6 +50,8 @@ const Signup = () => {
       }
     } catch (err) {
       toast.error("Something went wrong!")
+    } finally{
+      setLoading(false)
     }
 
     setFormData({
@@ -93,7 +97,9 @@ const Signup = () => {
           required
         />
         <br />
-        <button type="submit">Signup</button>
+        <button type="submit" className={loading? "disableBtn" :""}>
+          {loading ? "Signing in..." : "Signup" }
+        </button>
 
         <div>
           <p>Already have a account?

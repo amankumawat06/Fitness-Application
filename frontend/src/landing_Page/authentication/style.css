@@ -91,3 +91,8 @@
     padding: 30px 22px;
   }
 }
+
+.disableBtn{
+  background-color: #158156 !important;
+  cursor: not-allowed !important;
+}
