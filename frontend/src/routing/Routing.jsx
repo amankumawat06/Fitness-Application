@@ -4,7 +4,7 @@ import Footer from "../landing_Page/common/Footer";
 import Login from "../landing_Page/authentication/Login";
 import Signup from "../landing_Page/authentication/Signup";
 import Home from "../landing_Page/components/home/HomePage";
-import About from "../landing_Page/components/about/AboutHome";
+import About from "../landing_Page/components/about/aboutHome";
 import Features from "../landing_Page/components/features/FeaturesHome";
 import Plans from "../landing_Page/components/plans/PlansHome";
 import Reviews from "../landing_Page/components/reviews/ReviewsHome";
