@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "../landing_Page/common/Navbar";
 import Footer from "../landing_Page/common/Footer";
@@ -24,6 +23,8 @@ import MemberProfile from "../dashboards/member/MemberProfile";
 import MemberGoal from "../dashboards/member/MemberGoal";
 import MemberPlans from "../dashboards/member/MemberPlans";
 import Dashboard from "../dashboards/member/Dashboard";
+
+import PageNotFound from "../PageNotFound";
 
 const Routing = () => {
   return (
@@ -76,6 +77,7 @@ const Routing = () => {
           <Route path="trainers" element={<TrainersList />} />
           <Route path="members" element={<MembersList />} />
         </Route>
+          <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>

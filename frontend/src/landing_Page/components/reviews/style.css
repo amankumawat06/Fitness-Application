@@ -10,7 +10,6 @@
   text-align: center;
 }
 
-/* Heading */
 .reviews h2 {
   font-size: 3rem;
   margin-bottom: 10px;
@@ -26,14 +25,12 @@
   font-size: 1.1rem;
 }
 
-/* Grid */
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-/* Card */
 .review-card {
   background: #151515;
   padding: 35px 30px;
@@ -47,14 +44,12 @@
   box-shadow: 0 0 25px rgba(0, 255, 153, 0.12);
 }
 
-/* Stars */
 .stars {
   color: #00ff99;
   font-size: 1.2rem;
   margin-bottom: 15px;
 }
 
-/* Text */
 .review-text {
   color: #ccc;
   line-height: 1.6;
@@ -62,7 +57,6 @@
   font-size: 0.95rem;
 }
 
-/* Name */
 .review-card h4 {
   margin: 0;
   font-size: 1.1rem;
@@ -73,7 +67,6 @@
   font-size: 0.85rem;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
   .reviews-grid {
     grid-template-columns: repeat(2, 1fr);

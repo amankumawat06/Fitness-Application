@@ -100,7 +100,7 @@ const DEFAULT_EXERCISES = {
 };
 
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./member.css";
 
 const Dashboard = () => {

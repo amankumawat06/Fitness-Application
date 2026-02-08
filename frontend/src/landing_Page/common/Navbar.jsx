@@ -39,11 +39,6 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navContainer">
-          {/* <div className="navLogo">
-            <Link to="/" onClick={() => setIsMenuOpen(false)}>
-              <img className="logo" src="../public/assets/logo.png" />
-            </Link>
-          </div> */}
           <div className="navLogo">
           <Link to="/" className="logo-text" onClick={() => setIsMenuOpen(false)}>
             <span className="logo-fit">Fit</span>

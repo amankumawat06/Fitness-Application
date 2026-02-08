@@ -44,6 +44,7 @@ const MemberProfile = () => {
       </div>
 
       <button className="edit-btn" disabled>Edit Profile</button>
+      <ToastContainer />
     </div>
   );
 };

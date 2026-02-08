@@ -1,17 +1,6 @@
-/* *{
-    padding: 0;
-} */
-
 .auth-title::after{
     display: none;
 }
-
-/* .admin-wrapper {
-  display: flex;
-  min-height: 100vh;
-  background: #0b0b0b;
-  color: #fff;
-} */
 
 .admin-wrapper {
   display: flex;
@@ -20,15 +9,6 @@
   color: #fff;
   overflow: hidden;    
 }
-
-/* .admin-sidebar {
-  width: 240px;
-  background: #111;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-} */
 
 .admin-sidebar {
   width: 240px;
@@ -92,36 +72,6 @@
   padding: 20px;
   border-radius: 10px;
 }
-/* 
-.data-table {
-  margin-top: 20px;
-}
-
-.table-head,
-.table-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 12px;
-}
-
-.table-head {
-  color: #888;
-  border-bottom: 1px solid #222;
-}
-
-.table-row {
-  border-bottom: 1px solid #1a1a1a;
-}
-
-.status.active {
-  color: #1fdf64;
-  border-bottom: none;
-} */
-
-/* .member-table span{
-  margin: 0 20px !important;
-} */
-
 
 .data-section {
   width: 100%;
@@ -206,11 +156,10 @@
 
 .table-scroll {
   width: 100%;
-  overflow-x: auto;        /* horizontal scroll */
+  overflow-x: auto;
   overflow-y: hidden;
 }
 
-/* Force table width so scroll appears */
 .table-card {
   min-width: 700px;
 }
