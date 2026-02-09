@@ -2,7 +2,7 @@ require("dotenv").config()
 const express = require("express")
 const app = express()
 const { status } = require("http-status")
-const  connectToDB  = require("./config/db")
+const  connectToDB  = require("../config/db")
 const cors = require("cors")
 
 // Access dotenv varibles 
@@ -22,11 +22,11 @@ app.use(cors({
 }))
 
 //Access routes
-const userRouter = require("./routes/userRouter")
-const dashboardRoute = require("./routes/protectedRoutes")
-const adminDashboard = require("./routes/adminRoute")
-const trainerDashboard = require("./routes/trainerRoute")
-const memberDashboard = require("./routes/memberRoute")
+const userRouter = require("../routes/userRouter")
+const dashboardRoute = require("../routes/protectedRoutes")
+const adminDashboard = require("../routes/adminRoute")
+const trainerDashboard = require("../routes/trainerRoute")
+const memberDashboard = require("../routes/memberRoute")
 
 app.use("/api", userRouter)
 app.use("/api", dashboardRoute)
@@ -41,9 +41,9 @@ app.use((req,res) => {
     })
 })
 
-app.listen(port, () => {
-    console.log(`Server is listening on PORT ${port}`)
-})
+// app.listen(port, () => {
+//     console.log(`Server is listening on PORT ${port}`)
+// })
 
 module.exports = app
 
