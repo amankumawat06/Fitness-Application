@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors({
     origin: [
-        "http://localhost:5173",
+        "https://fit-track-fitness-application.vercel.app"
     ],
     credentials:true,
 }))
