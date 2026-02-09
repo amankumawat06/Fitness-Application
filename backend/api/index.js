@@ -17,6 +17,7 @@ app.use(express.json())
 app.use(cors({
     origin: [
         "https://fit-track-fitness-application.vercel.app",
+        "https://fitness-application-35y8.vercel.app"
     ],
     credentials:true,
 }))
