@@ -15,8 +15,11 @@ import DashboardHome from "../dashboards/admin/DashboardHome";
 import CreateTrainer from "../dashboards/admin/CreateTrainer";
 import TrainersList from "../dashboards/admin/TrainersList";
 import MembersList from "../dashboards/admin/MembersList";
+import AdminProfile from "../dashboards/admin/AdminProfile";
+
 import TrainerDashboard from "../dashboards/trainer/TrainerDashboard";
 import TrainerDashboardMembers from "../dashboards/trainer/MemberList"
+import TrainerProfile from "../dashboards/trainer/TrainerProfile";
 
 import MemberDashboard from "../dashboards/member/MemberDashboard"
 import MemberProfile from "../dashboards/member/MemberProfile";
@@ -62,6 +65,7 @@ const Routing = () => {
           }
         >
           <Route path="members" element={<TrainerDashboardMembers />} />
+          <Route path="profile" element={<TrainerProfile />} />
         </Route>
 
         <Route
@@ -76,6 +80,7 @@ const Routing = () => {
           <Route path="create-trainer" element={<CreateTrainer />} />
           <Route path="trainers" element={<TrainersList />} />
           <Route path="members" element={<MembersList />} />
+          <Route path="profile" element={<AdminProfile />} />
         </Route>
           <Route path="*" element={<PageNotFound />} />
       </Routes>

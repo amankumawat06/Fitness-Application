@@ -8,7 +8,7 @@ const MembersList = () => {
   let token = localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get("https://fitness-application-rho.vercel.app/api/tariner/members", {
+      .get("http://localhost:8080/api/tariner/members", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -20,7 +20,6 @@ const MembersList = () => {
 
   return (
     <>
-    <h4 style={{padding:"15px 0 0 19px",color:"#00ff99"}}>Trainer Panel</h4>
     <div className="p-4 data-section">
       <h3 className="section-title">Members</h3>
     <div className="table-scroll">

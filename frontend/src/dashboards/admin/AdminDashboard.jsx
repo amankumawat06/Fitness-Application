@@ -4,6 +4,7 @@ import {
   FaUserPlus,
   FaDumbbell,
   FaUsers,
+  FaUser
 } from "react-icons/fa";
 
 const AdminDashboard = () => {
@@ -29,6 +30,10 @@ const AdminDashboard = () => {
         <NavLink to="/admin/members" className="side-item">
           <span className="icon"><FaUsers className="icon" /></span>
           <span className="label">Members List</span>
+        </NavLink>
+        <NavLink to="/admin/profile" className="side-item">
+          <span className="icon"><FaUser className="icon" /></span>
+          <span className="label">Profile</span>
         </NavLink>
 
       </aside>

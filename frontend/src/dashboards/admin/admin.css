@@ -173,3 +173,11 @@
     word-break: break-all;
   }
 }
+
+.side-item .label{
+  z-index: 100000 !important;
+}
+
+.auth-card{
+  z-index: 100 !important;
+}

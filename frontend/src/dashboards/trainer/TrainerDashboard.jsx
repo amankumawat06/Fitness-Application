@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import "./trainer.css"
-import { FaUsers} from "react-icons/fa";
+import { FaUsers, FaUser} from "react-icons/fa";
 
 const TrainerDashboard = () => {
   return (
@@ -11,6 +11,12 @@ const TrainerDashboard = () => {
             <span className="icon"><FaUsers className="icon" /></span>
             <span className="label">Members List</span>
           </NavLink>
+          <NavLink to="/trainer/profile" className="side-item">
+          <span className="icon">
+            <FaUser className="icon" />
+          </span>
+          <span className="label">Profile</span>
+        </NavLink>
       </aside>
 
       <main className="main-content">

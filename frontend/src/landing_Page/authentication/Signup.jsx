@@ -39,7 +39,7 @@ const Signup = () => {
 
     try {
       
-      let res = await axios.post("https://fitness-application-35y8.vercel.app/api/signup",formData)
+      let res = await axios.post("http://localhost:8080/api/signup",formData)
 
       if(res.data.success){
         handleSuccess(res.data.message)

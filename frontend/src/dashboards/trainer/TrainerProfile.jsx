@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
-import "./member.css"
 
-const MemberProfile = () => {
+const TrainerProfile = () => {
   const [user, setUser] = useState("");
   try {
     useEffect(() => {
       let token = localStorage.getItem("token");
       axios
-        .get("http://localhost:8080/api/member/profile", {
+        .get("http://localhost:8080/api/trainer/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -28,7 +27,7 @@ const MemberProfile = () => {
 
   return (
     <>
-    <h4 style={{color:"#00ff99", padding: "15px 0 0 19px"}}>Member Panel</h4>
+    <h4 style={{color:"#00ff99", padding: "15px 0 0 19px"}}>Trainer Panel</h4>
     <div className="member-profile">
       <h2 className="profile-greeting mb-4">
         Welcome, <span>{user.name}</span> 👋
@@ -52,4 +51,4 @@ const MemberProfile = () => {
   );
 };
 
-export default MemberProfile;
+export default TrainerProfile;

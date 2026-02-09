@@ -39,7 +39,7 @@ const Login = () => {
     setLoading(true)
 
     try {
-      let res = await axios.post("https://fitness-application-35y8.vercel.app/api/login", formData);
+      let res = await axios.post("http://localhost:8080/api/login", formData);
 
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
@@ -47,9 +47,9 @@ const Login = () => {
         const role = decoded.role;
 
         if (role === "admin") {
-          navigate("/admin/dashboard");
+          navigate("/admin/profile");
         } else if (role === "trainer") {
-          navigate("/trainer/members");
+          navigate("/trainer/profile");
         } else {
           navigate("/member/profile");
         }

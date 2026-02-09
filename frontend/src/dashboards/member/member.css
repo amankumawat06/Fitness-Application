@@ -358,8 +358,10 @@
   .side-item .label {
     position: absolute;
     left: 70px;
-    background: #111;
-    color: #fff;
+    /* background: #111; */
+    background: #00ff99;
+    color: #0c0b0b;
+    /* color: #fff; */
     padding: 6px 12px;
     border-radius: 6px;
     white-space: nowrap;
@@ -544,4 +546,8 @@
 .exercise-card{
   width: 60%;
 }
+}
+
+.side-item .label{
+  z-index: 9999 !important;
 }

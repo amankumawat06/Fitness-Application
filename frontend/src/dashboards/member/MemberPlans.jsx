@@ -11,7 +11,7 @@ const MemberPlans = () => {
 
   useEffect(() => {
     axios
-      .get("https://fitness-application-rho.vercel.app/api/member/plans", {
+      .get("http://localhost:8080/api/member/plans", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
