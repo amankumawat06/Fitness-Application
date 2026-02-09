@@ -110,7 +110,7 @@ const Dashboard = () => {
   useEffect(() => {
     const getSelectedPlan = async () => {
       await axios
-        .get("http://localhost:8080/api/member/selected-goal", {
+        .get("https://fitness-application-three.vercel.app/api/member/selected-goal", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -39,7 +39,7 @@ const Login = () => {
     setLoading(true)
 
     try {
-      let res = await axios.post("http://localhost:8080/api/login", formData);
+      let res = await axios.post("https://fitness-application-three.vercel.app/api/login", formData);
 
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);

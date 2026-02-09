@@ -8,7 +8,7 @@ const AdminProfile = () => {
     useEffect(() => {
       let token = localStorage.getItem("token");
       axios
-        .get("http://localhost:8080/api/admin/profile", {
+        .get("https://fitness-application-three.vercel.app/api/admin/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

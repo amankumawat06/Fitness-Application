@@ -9,7 +9,7 @@ const MemberProfile = () => {
     useEffect(() => {
       let token = localStorage.getItem("token");
       axios
-        .get("http://localhost:8080/api/member/profile", {
+        .get("https://fitness-application-three.vercel.app/api/member/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
