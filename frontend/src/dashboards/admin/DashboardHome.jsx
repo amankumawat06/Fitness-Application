@@ -10,7 +10,7 @@ const DashboardHome = () => {
 
   const token = localStorage.getItem("token") 
   useEffect(() => {
-    axios.get("https://fitness-application-rho.vercel.app/admin/allTrainers",{
+    axios.get("https://fitness-application-rho.vercel.app/api/admin/allTrainers",{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -21,7 +21,7 @@ const DashboardHome = () => {
 
 
   useEffect(() => {
-    axios.get("https://fitness-application-rho.vercel.app/admin/allMembers",{
+    axios.get("https://fitness-application-rho.vercel.app/api/admin/allMembers",{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -31,7 +31,7 @@ const DashboardHome = () => {
   },[])
 
   useEffect(() => {
-    axios.get("https://fitness-application-rho.vercel.app/admin/allPlans",{
+    axios.get("https://fitness-application-rho.vercel.app/api/admin/allPlans",{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -41,6 +41,8 @@ const DashboardHome = () => {
   },[])
 
   return (
+    <>
+      <h4 style={{padding:"15px 0 0 19px",color:"#00ff99"}}>Admin Panel</h4>
     <div className="admin-grid p-3">
       <div className="admin-card">
         <h4>Total Trainers</h4>
@@ -57,6 +59,7 @@ const DashboardHome = () => {
         <p>{totalPlans.length}</p>
       </div>
     </div>
+    </>
   );
 };
 

@@ -39,8 +39,7 @@ const Signup = () => {
 
     try {
       
-      let res = await axios.post("https://fitness-application-rho.vercel.app/signup",formData)
-      console.log(`User created successfully!`)
+      let res = await axios.post("https://fitness-application-rho.vercel.app/api/signup",formData)
 
       if(res.data.success){
         handleSuccess(res.data.message)
@@ -77,6 +76,7 @@ const Signup = () => {
           value={formData.name}
           onChange={handleInputChanges}
           required
+          disabled={loading}
         />
         <br />
         <input
@@ -86,6 +86,7 @@ const Signup = () => {
           value={formData.email}
           onChange={handleInputChanges}
           required
+          disabled={loading}
         />
         <br />
         <input
@@ -95,9 +96,10 @@ const Signup = () => {
           value={formData.password}
           onChange={handleInputChanges}
           required
+          disabled={loading}
         />
         <br />
-        <button type="submit" className={loading? "disableBtn" :""}>
+        <button type="submit" className={loading? "disableBtn" :""} disabled={loading}>
           {loading ? "Signing in..." : "Signup" }
         </button>
 

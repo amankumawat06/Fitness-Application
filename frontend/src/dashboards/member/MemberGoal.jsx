@@ -10,7 +10,7 @@ const MemberGoal = () => {
   const setGoal = async (goal) => {
     try {
       let res = await axios.post(
-        "https://fitness-application-rho.vercel.app/member/set-goal",
+        "https://fitness-application-rho.vercel.app/api/member/set-goal",
         { goal },
         {
           headers: {

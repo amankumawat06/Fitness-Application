@@ -9,7 +9,7 @@ const MemberProfile = () => {
     useEffect(() => {
       let token = localStorage.getItem("token");
       axios
-        .get("https://fitness-application-rho.vercel.app/member/profile", {
+        .get("https://fitness-application-rho.vercel.app/api/member/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -27,6 +27,8 @@ const MemberProfile = () => {
   }
 
   return (
+    <>
+    <h4 style={{color:"#00ff99", padding: "15px 0 0 19px"}}>Member Panel</h4>
     <div className="member-profile">
       <h2 className="profile-greeting mb-4">
         Welcome, <span>{user.name}</span> 👋
@@ -46,6 +48,7 @@ const MemberProfile = () => {
       <button className="edit-btn" disabled>Edit Profile</button>
       <ToastContainer />
     </div>
+    </>
   );
 };
 

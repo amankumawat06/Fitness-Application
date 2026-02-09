@@ -39,7 +39,7 @@ const Login = () => {
     setLoading(true)
 
     try {
-      let res = await axios.post("https://fitness-application-rho.vercel.app/login", formData);
+      let res = await axios.post("https://fitness-application-rho.vercel.app/api/login", formData);
 
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
@@ -89,6 +89,7 @@ const Login = () => {
           value={formData.email}
           onChange={handleInputChanges}
           required
+          disabled={loading}
         />
         <br />
         <input
@@ -98,9 +99,10 @@ const Login = () => {
           value={formData.password}
           onChange={handleInputChanges}
           required
+          disabled={loading}
         />
         <br />
-        <button type="submit" className={loading ? "disableBtn" : ""}>
+        <button type="submit" className={loading ? "disableBtn" : ""} disabled={loading}>
           {loading ? "Logging in..." : "Login"}
         </button>
 

@@ -33,7 +33,7 @@ const CreateTrainer = () => {
     e.preventDefault()
     try{
       let token = localStorage.getItem("token")
-      let res = await axios.post("https://fitness-application-rho.vercel.app/admin/create-trainer", formData,
+      let res = await axios.post("https://fitness-application-rho.vercel.app/api/admin/create-trainer", formData,
         {
           headers:{
             Authorization:`Bearer ${token}`
