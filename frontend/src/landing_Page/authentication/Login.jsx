@@ -39,7 +39,7 @@ const Login = () => {
     setLoading(true)
 
     try {
-      let res = await axios.post("https://fitness-application-rho.vercel.app/api/login", formData);
+      let res = await axios.post("https://fitness-application-35y8.vercel.app/api/login", formData);
 
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
