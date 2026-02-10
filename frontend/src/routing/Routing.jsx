@@ -32,7 +32,7 @@ import PrivacyPolicy from "../landing_Page/components/support/PrivacyPolicy";
 import TermsConditions from "../landing_Page/components/support/TermsConditions";
 import RefundPolicy from "../landing_Page/components/support/RefundPolicy";
 import Help from "../landing_Page/components/support/Help";
-import FAQs from "../landing_Page/components/support/Faqs";
+import FAQs from "../landing_Page/components/support/FAQs";
 
 import PageNotFound from "../PageNotFound";
 
