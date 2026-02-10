@@ -46,12 +46,17 @@ const Login = () => {
         const decoded = jwtDecode(res.data.token);
         const role = decoded.role;
 
+        const memberRedirect = localStorage.getItem("redirectAfterLogin") || "/member/profile";
+        const trainerRedirect = localStorage.getItem("redirectAfterLogin") || "/trainer/profile";
+        const adminRedirect = localStorage.getItem("redirectAfterLogin") || "/admin/profile";
+        localStorage.removeItem("redirectAfterLogin")
+
         if (role === "admin") {
-          navigate("/admin/profile");
+          navigate(adminRedirect);
         } else if (role === "trainer") {
-          navigate("/trainer/profile");
+          navigate(trainerRedirect);
         } else {
-          navigate("/member/profile");
+          navigate(memberRedirect);
         }
         handleSuccess(res.data.message);
         setTimeout(() => {  

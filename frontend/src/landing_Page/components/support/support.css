@@ -1,0 +1,90 @@
+/* ===== Common Page Layout ===== */
+
+.page {
+  min-height: 100vh;
+  background: #0b0b0b;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-container {
+  max-width: 900px;
+  width: 100%;
+  background: #111;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 0 40px rgba(0, 255, 136, 0.08);
+  color: #e5e5e5;
+}
+
+/* ===== Headings ===== */
+
+.page-title {
+  font-size: 38px;
+  color: #00ff88;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.page-date {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.page-text {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+/* ===== Sections ===== */
+
+.page-section {
+  margin-bottom: 30px;
+}
+
+.page-section h2 {
+  color: #00ff88;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.page-section p {
+  line-height: 1.7;
+  color: #ccc;
+}
+
+/* ===== Lists ===== */
+
+.page-list {
+  margin-left: 20px;
+}
+
+.page-list li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* ===== Contact Box (optional) ===== */
+
+.contact-box {
+  margin-top: 10px;
+  padding: 15px;
+  background: #0b0b0b;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.contact-box p {
+  margin: 6px 0;
+  color: #ccc;
+}

@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors({
     origin: [
-        "https://fit-track-fitness-application.vercel.app"
+        "https://fit-track-fitness-application.vercel.app",
     ],
     credentials:true,
 }))
@@ -27,12 +27,14 @@ const dashboardRoute = require("../routes/protectedRoutes")
 const adminDashboard = require("../routes/adminRoute")
 const trainerDashboard = require("../routes/trainerRoute")
 const memberDashboard = require("../routes/memberRoute")
+const paymentRouter = require("../routes/paymentRoute")
 
 app.use("/api", userRouter)
 app.use("/api", dashboardRoute)
 app.use("/api", adminDashboard)
 app.use("/api", trainerDashboard)
 app.use("/api", memberDashboard)
+app.use("/api", paymentRouter)
 
 app.use((req,res) => {
     return res.status(status.NOT_FOUND).json({
@@ -41,9 +43,9 @@ app.use((req,res) => {
     })
 })
 
-// app.listen(port, () => {
-//     console.log(`Server is listening on PORT ${port}`)
-// })
+app.listen(port, () => {
+    console.log(`Server is listening on PORT ${port}`)
+})
 
 module.exports = app
 

@@ -26,8 +26,16 @@ import MemberProfile from "../dashboards/member/MemberProfile";
 import MemberGoal from "../dashboards/member/MemberGoal";
 import MemberPlans from "../dashboards/member/MemberPlans";
 import Dashboard from "../dashboards/member/Dashboard";
+import ProtectedGoalAccess from "./ProtectGoalAccess";
+
+import PrivacyPolicy from "../landing_Page/components/support/PrivacyPolicy";
+import TermsConditions from "../landing_Page/components/support/TermsConditions";
+import RefundPolicy from "../landing_Page/components/support/RefundPolicy";
+import Help from "../landing_Page/components/support/Help";
+import FAQs from "../landing_Page/components/support/Faqs";
 
 import PageNotFound from "../PageNotFound";
+
 
 const Routing = () => {
   return (
@@ -41,6 +49,11 @@ const Routing = () => {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/help-center" element={<Help />} />
+        <Route path="/faqs" element={<FAQs />} />
 
         <Route
           path="/member"
@@ -53,7 +66,12 @@ const Routing = () => {
           <Route path="profile" element={<MemberProfile />} />
           <Route path="goal" element={<MemberGoal />} />
           <Route path="plans" element={<MemberPlans />} />
-          <Route path="selected-goal" element={<Dashboard />} />
+          <Route path="selected-goal" element={
+            <ProtectedGoalAccess>
+              <Dashboard />
+            </ProtectedGoalAccess>
+            } />
+            
         </Route>
 
         <Route

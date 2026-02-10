@@ -1,6 +1,65 @@
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Hero = () => {
+
+   const handlePayment = async (plan) => {
+
+    const token = localStorage.getItem("token")
+
+    if(!token){
+      localStorage.setItem("redirectAfterLogin", "/plans")
+      localStorage.setItem("selectedPlan", plan)
+
+      window.location.href = "/login"
+      return;
+    }
+
+    try {
+      const { data } = await axios.post(
+        "https://fit-track-fitness-application.vercel.app/api/payment/create-order",
+        {
+          planName: plan
+        }
+      );
+
+      const options = {
+        key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+        amount: data.amount,
+        currency: data.currency,
+        order_id: data.orderId,
+        name: "FitTrack",
+        description: `Payment for ${plan} plan`,
+
+        method:{
+          upi: true,
+          card: true,
+          netbanking: true,
+          wallet: true,
+          paylater: true,
+        },
+
+        handler: function (response) {
+          console.log("Payment Success:", response);
+          localStorage.setItem("paymentToken", "paiduser67gh7");
+
+          console.log(`${plan} plan activated 🎉`);
+          setTimeout(() =>  window.location.href = "/member/selected-goal"  , 200);
+        },
+        theme: {
+          color: "#00ff88",
+        },
+      };
+
+      const razorpay = new window.Razorpay(options);
+      razorpay.open();
+
+    } catch (err) {
+      console.error(err);
+      alert("Payment failed");
+    }
+  };
+
   return (
     <div>
       <section className="plans">
@@ -27,9 +86,9 @@ const Hero = () => {
                 <li>✖ Trainer guidance</li>
               </ul>
 
-              <Link to="/login">
-                <button className="plan-btn">Get Started</button>
-              </Link>
+              {/* <Link to="/login"> */}
+                <button className="plan-btn" onClick={() => handlePayment("Basic")}>Get Started</button>
+              {/* </Link> */}
             </div>
 
             <div className="plan-card popular">
@@ -46,9 +105,9 @@ const Hero = () => {
                 <li>✔ Priority support</li>
               </ul>
 
-              <Link to="/login">
-                <button className="plan-btn primary">Join Pro</button>
-              </Link>
+              {/* <Link to="/login"> */}
+                <button className="plan-btn primary" onClick={() => handlePayment("Pro")}>Join Pro</button>
+              {/* </Link> */}
             </div>
 
             <div className="plan-card">
@@ -64,9 +123,9 @@ const Hero = () => {
                 <li>✔ Advanced analytics</li>
               </ul>
 
-              <Link to="/login">
-                <button className="plan-btn">Go Premium</button>
-              </Link>
+              {/* <Link to="/login"> */}
+                <button className="plan-btn" onClick={() => handlePayment("Premium")}>Go Premium</button>
+              {/* </Link> */}
             </div>
           </div>
         </div>

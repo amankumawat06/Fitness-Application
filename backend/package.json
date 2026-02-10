@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon api/index.js",
-    "dev": "nodemon api/index.js" 
+    "dev": "nodemon api/index.js"
   },
   "keywords": [],
   "author": "Aman kumawat",
@@ -17,6 +17,7 @@
     "express": "^5.2.1",
     "http-status": "^2.1.0",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.1.5"
+    "mongoose": "^9.1.5",
+    "razorpay": "^2.9.6"
   }
 }

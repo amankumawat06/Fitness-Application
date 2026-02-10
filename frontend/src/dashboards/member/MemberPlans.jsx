@@ -22,6 +22,15 @@ const MemberPlans = () => {
   }, []);
 
   const selectPlan = async (planId) => {
+
+    let paymentToken = localStorage.getItem("paymentToken")
+
+    if(!paymentToken){
+      toast.error("Make your payment first to access your plan page!")
+      setTimeout(() => navigate("/plans") , 2000);
+      return;
+    }
+
     try {
       let res = await axios
         .post(
@@ -35,7 +44,7 @@ const MemberPlans = () => {
         )
         .then((res) => {
           toast.success(res.data.message);
-          setTimeout(() => navigate("/member/selected-goal"), 1300);
+            navigate("/member/selected-goal")
         });
     } catch (err) {
       toast.error(err);

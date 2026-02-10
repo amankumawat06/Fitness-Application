@@ -3,6 +3,7 @@ import "./member.css";
 import { FaUser, FaBullseye, FaClipboardList, FaFireAlt } from "react-icons/fa";
 
 const TrainerDashboard = () => {
+  let paymentToken = localStorage.getItem("paymentToken")
   return (
     <div className="wrapper">
       <aside className="sidebar icon-sidebar">
