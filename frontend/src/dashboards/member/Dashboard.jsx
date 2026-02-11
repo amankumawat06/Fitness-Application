@@ -101,9 +101,11 @@ const DEFAULT_EXERCISES = {
 
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"
 import "./member.css";
 
 const Dashboard = () => {
+  const navigate = useNavigate()
   let [selectedGoal, setSelectedGoal] = useState(null);
   const [loading, setLoading] = useState(true);
   let token = localStorage.getItem("token");
@@ -133,6 +135,7 @@ const Dashboard = () => {
     return (
       <div className="plan-inset-box empty m-4">
         <p>Your selected plan will appear here</p>
+        <button onClick={() => navigate("/member/goal")} className="setGoalBtn">Set your goal</button>
       </div>
     );
   }

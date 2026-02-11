@@ -551,3 +551,18 @@
 .side-item .label{
   z-index: 9999 !important;
 }
+
+.setGoalBtn{
+  border: none;
+  padding: 10px 30px;
+  font-size: 19px;
+  background-color: transparent;
+  color: rgb(211, 206, 206);
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px white;
+}
+
+.setGoalBtn:hover{
+  box-shadow: inset 0 0 5px #00ff99;
+}
