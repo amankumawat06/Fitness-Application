@@ -1,0 +1,93 @@
+.schedule-section {
+  padding: 80px 20px;
+  background: #0b0b0b;
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  color: white;
+}
+
+.schedule-container h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.schedule-container h2 span {
+  color: #00ff88;
+}
+
+.schedule-subtitle {
+  color: #aaa;
+  margin-bottom: 45px;
+}
+
+.table-wrapper {
+  background: #111;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 0 50px rgba(0, 255, 136, 0.05);
+  border: 1px solid rgba(0, 255, 136, 0.12);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+thead {
+  background: #00ff88;
+}
+
+thead th {
+  color: black;
+  font-weight: 600;
+  padding: 16px;
+  font-size: 15px;
+}
+
+tbody td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #ccc;
+  font-size: 14px;
+}
+
+tbody tr {
+  transition: 0.25s ease;
+}
+
+tbody tr:hover {
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.closed {
+  color: #ff4d4d;
+  font-weight: 600;
+  text-align: center;
+}
+
+.gym-status {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.gym-status span {
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.gym-status.open span {
+  color: #00ff88;
+}
+
+.gym-status.closed span {
+  color: #ff4d4d;
+}

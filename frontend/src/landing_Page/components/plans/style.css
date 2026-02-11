@@ -42,7 +42,7 @@
 
 .plan-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(0, 255, 153, 0.15);
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.15);
 }
 
 .plan-card.popular {

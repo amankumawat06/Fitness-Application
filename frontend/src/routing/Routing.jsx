@@ -34,12 +34,15 @@ import RefundPolicy from "../landing_Page/components/support/RefundPolicy";
 import Help from "../landing_Page/components/support/Help";
 import FAQs from "../landing_Page/components/support/FAQs";
 
+import ScrollToTop from "../landing_Page/components/ScrollToTop";
+
 import PageNotFound from "../PageNotFound";
 
 
 const Routing = () => {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -38,10 +38,14 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="footer-col">
+        <div className="footer-col gym-detail">
           <h4>Contact</h4>
-          <p>Email: amankumawat4507@gmail.com</p>
-          <p>Phone: +91 9079720440</p>
+          <p>
+            Email: <a href="mailto:amankumawat4507@gmail.com">amankumawat4507@gmail.com</a> 
+            </p>
+          <p>
+            Phone: <a href="tel:+919079720440"> +91 9079720440 </a>
+            </p>
 
           <div className="socials">
             <a href="https://www.instagram.com/amankmwt_06/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer"><span><FaInstagram /></span></a>
