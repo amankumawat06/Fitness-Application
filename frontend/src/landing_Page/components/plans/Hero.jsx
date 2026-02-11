@@ -17,7 +17,7 @@ const Hero = () => {
 
     try {
       const { data } = await axios.post(
-        "https://fit-track-fitness-application.vercel.app/api/payment/create-order",
+        "https://fitness-application-three.vercel.app/api/payment/create-order",
         {
           planName: plan
         }
@@ -40,10 +40,8 @@ const Hero = () => {
         },
 
         handler: function (response) {
-          console.log("Payment Success:", response);
           localStorage.setItem("paymentToken", "paiduser67gh7");
 
-          console.log(`${plan} plan activated 🎉`);
           setTimeout(() =>  window.location.href = "/member/selected-goal"  , 200);
         },
         theme: {
