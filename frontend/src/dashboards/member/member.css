@@ -387,12 +387,12 @@
   }
 }
 
-@media (max-width:750px) {
+@media (max-width: 750px) {
   .icon-sidebar {
     width: 52px;
     padding: 16px 10px;
   }
-  .icon{
+  .icon {
     font-size: 17px !important;
   }
 }
@@ -484,75 +484,74 @@
   box-shadow: 0 12px 30px rgba(0, 255, 150, 0.08);
 }
 
-
-.rec-exercises-title{
+.rec-exercises-title {
   padding: 44px;
 }
 
-@media (max-width:435px) {
-.exercise-img img {
-  width: 100%;
-  height: 170px;
-}
-.exercise-grid {
-  gap: 24px;
-  padding: 20px;
-}
-.member-plan-page {
-  padding: 20px;
-}
-.rec-exercises-title{
-  padding: 24px;
-}
-}
-
-@media (max-width:390px) {
+@media (max-width: 435px) {
   .exercise-img img {
-  height: 170px;
-}
-.exercise-card{
-  width: 90%;
-}
-.plan-inset-box{
-  padding: 20px 15px;
-}
-.rec-exercises-title{
-  font-size: 18px;
-}
+    width: 100%;
+    height: 170px;
+  }
+  .exercise-grid {
+    gap: 24px;
+    padding: 20px;
+  }
+  .member-plan-page {
+    padding: 20px;
+  }
+  .rec-exercises-title {
+    padding: 24px;
+  }
 }
 
-@media (max-width:360px) {
+@media (max-width: 390px) {
   .exercise-img img {
-  height: 140px;
-}
-.exercise-card{
-  width: 80%;
-}
+    height: 170px;
+  }
+  .exercise-card {
+    width: 90%;
+  }
+  .plan-inset-box {
+    padding: 20px 15px;
+  }
+  .rec-exercises-title {
+    font-size: 18px;
+  }
 }
 
-@media (max-width:325px) {
+@media (max-width: 360px) {
   .exercise-img img {
-  height: 130px;
-}
-.exercise-card{
-  width: 70%;
-}
+    height: 140px;
+  }
+  .exercise-card {
+    width: 80%;
+  }
 }
 
-@media (max-width:300px) {
+@media (max-width: 325px) {
   .exercise-img img {
-  height: 100px;
-}
-.exercise-card{
-  width: 60%;
-}
+    height: 130px;
+  }
+  .exercise-card {
+    width: 70%;
+  }
 }
 
-.side-item .label{
+@media (max-width: 300px) {
+  .exercise-img img {
+    height: 100px;
+  }
+  .exercise-card {
+    width: 60%;
+  }
+}
+
+.side-item .label {
   z-index: 9999 !important;
 }
 
-.setGoalBtn{
+.setGoalBtn {
   border: none;
   padding: 10px 30px;
   font-size: 19px;
@@ -563,6 +562,113 @@
   box-shadow: 0 0 2px white;
 }
 
-.setGoalBtn:hover{
+.setGoalBtn:hover {
   box-shadow: inset 0 0 5px #00ff99;
+}
+
+.bmi-page {
+  min-height: 100vh;
+  background: #0b0b0b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.bmi-card {
+  width: 100%;
+  max-width: 420px;
+  background: #111;
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  color: white;
+  /* box-shadow: 0 0 60px rgba(0, 255, 136, 0.08); */
+  /* border: 1px solid rgba(0, 255, 136, 0.12); */
+}
+
+.bmi-card h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.bmi-card h2 span {
+  color: #00ff88;
+}
+
+.bmi-subtitle {
+  color: #aaa;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.bmi-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.bmi-inputs input {
+  background: #0b0b0b;
+  border: none;
+  border-bottom: 2px solid rgba(0, 255, 136, 0.2);
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+}
+
+.bmi-inputs input:focus {
+  border-color: #00ff88;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #00ff88;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+.bmi-result {
+  margin-top: 30px;
+}
+
+.bmi-value {
+  font-size: 42px;
+  font-weight: bold;
+  color: #00ff88;
+  margin: 10px 0;
+}
+
+.bmi-status {
+  font-weight: 600;
+}
+
+/* Remove arrows from number input */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width:450px) {
+  .bmi-card{
+    padding: 40px 20px;
+  }
 }

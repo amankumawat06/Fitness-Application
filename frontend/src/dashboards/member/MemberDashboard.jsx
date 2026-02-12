@@ -35,6 +35,13 @@ const TrainerDashboard = () => {
           </span>
           <span className="label">Your Plan</span>
         </NavLink>
+        <NavLink to="/member/bmi" className="side-item">
+          <span className="icon">
+            {/* <FaFireAlt className="icon" /> */}
+            🙄
+          </span>
+          <span className="label">Check BMI</span>
+        </NavLink>
       </aside>
 
       <main className="main-content">

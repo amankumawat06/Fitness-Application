@@ -27,6 +27,7 @@ import MemberGoal from "../dashboards/member/MemberGoal";
 import MemberPlans from "../dashboards/member/MemberPlans";
 import Dashboard from "../dashboards/member/Dashboard";
 import ProtectedGoalAccess from "./ProtectGoalAccess";
+import BMIChecker from "../dashboards/member/BMIChecker";
 
 import PrivacyPolicy from "../landing_Page/components/support/PrivacyPolicy";
 import TermsConditions from "../landing_Page/components/support/TermsConditions";
@@ -73,8 +74,8 @@ const Routing = () => {
             <ProtectedGoalAccess>
               <Dashboard />
             </ProtectedGoalAccess>
-            } />
-            
+            } />  
+          <Route path="bmi" element={<BMIChecker />} /> 
         </Route>
 
         <Route
