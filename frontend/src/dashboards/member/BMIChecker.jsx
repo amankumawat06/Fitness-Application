@@ -52,15 +52,15 @@ const BMIChecker = () => {
   };
 
   return (
-    <div className="bmi-page">
-      <div className="bmi-card">
+    <div className="bmi-checker-page">
+      <div className="bmi-checker-card">
         <h2>
           BMI <span>Calculator</span>
         </h2>
 
-        <p className="bmi-subtitle">Check your Body Mass Index instantly</p>
+        <p className="bmi-checker-subtitle">Check your Body Mass Index instantly</p>
 
-        <form onSubmit={calculateBMI} className="bmi-inputs">
+        <form onSubmit={calculateBMI} className="bmi-checker-inputs">
           <input
             type="number"
             name="height"
@@ -77,7 +77,7 @@ const BMIChecker = () => {
             onChange={handleChanges}
           />
 
-          <button type="submit">Calculate BMI</button>
+          <button type="submit" className="bmi-button">Calculate BMI</button>
         </form>
 
         {bmi && (
