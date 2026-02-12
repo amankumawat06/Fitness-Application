@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import "./member.css";
 import { FaUser, FaBullseye, FaClipboardList, FaFireAlt } from "react-icons/fa";
+import { GiWeightScale } from "react-icons/gi";
 
 const TrainerDashboard = () => {
   let paymentToken = localStorage.getItem("paymentToken")
@@ -37,8 +38,7 @@ const TrainerDashboard = () => {
         </NavLink>
         <NavLink to="/member/bmi" className="side-item">
           <span className="icon">
-            {/* <FaFireAlt className="icon" /> */}
-            🙄
+            <GiWeightScale className="icon" />
           </span>
           <span className="label">Check BMI</span>
         </NavLink>
