@@ -135,7 +135,7 @@ const Dashboard = () => {
     return (
       <div className="plan-inset-box empty m-4">
         <p>Your selected plan will appear here</p>
-        <button onClick={() => navigate("/member/goal")} className="setGoalBtn">Set your goal</button>
+        <button onClick={() => navigate("/member/plans")} className="setGoalBtn">Select plan</button>
       </div>
     );
   }

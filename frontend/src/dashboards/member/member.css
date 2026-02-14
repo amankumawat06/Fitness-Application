@@ -553,7 +553,7 @@
 
 .setGoalBtn {
   border: none;
-  padding: 10px 30px;
+  padding: 8px 25px;
   font-size: 19px;
   background-color: transparent;
   color: rgb(211, 206, 206);
@@ -563,7 +563,8 @@
 }
 
 .setGoalBtn:hover {
-  box-shadow: inset 0 0 5px #00ff99;
+  box-shadow: inset 0 0 5px #00ff88;
+  color: #00ff99;
 }
 
 
